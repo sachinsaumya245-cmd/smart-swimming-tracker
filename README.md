@@ -1,12 +1,22 @@
 # Smart Swimming Tracker
 
-An embedded IoT wearable designed to monitor swimming performance using motion and heart-rate sensors.
+An embedded IoT wearable designed to monitor swimming performance using motion sensing, heart-rate monitoring, real-time data processing, and cloud connectivity.
 
 ## Project Overview
 
-This project is a wearable swimming performance tracker built using an ESP32, MPU6050 IMU, and MAX30102 optical heart-rate sensor.
+The Smart Swimming Tracker is built around an ESP32 microcontroller and uses multiple sensors to monitor swimmer performance.
 
-The system is designed to collect and process swimmer activity data in real time and send key metrics to an IoT dashboard.
+The system combines:
+
+- MPU6050 accelerometer and gyroscope
+- MAX30102 optical heart-rate sensor
+- ESP32 microcontroller
+- Li-Po battery power system
+- Blynk IoT dashboard
+
+The tracker processes swimmer movement and calculates useful performance metrics such as stroke count, lap count, current speed, average speed, and heart rate.
+
+---
 
 ## Main Features
 
@@ -15,83 +25,132 @@ The system is designed to collect and process swimmer activity data in real time
 - Current speed estimation
 - Average speed calculation
 - Heart-rate monitoring
-- Sensor calibration
-- Motion analysis using MPU6050
-- IoT data monitoring using Blynk
-- Battery-powered wearable design
+- MPU6050 calibration
+- Motion analysis
+- Battery monitoring
+- Blynk IoT integration
+- Deep-sleep power management
+- Status LED indication
+- Session control
+
+---
 
 ## Hardware
 
-- ESP32
+Main components used:
+
+- ESP32 development board
 - MPU6050 accelerometer and gyroscope
-- MAX30102 heart-rate sensor
+- MAX30102 optical heart-rate sensor
 - Li-Po battery
-- TP4056 battery charging module
+- TP4056 charging and protection module
 - DC-DC boost converter
-- Push button for session reset
-- Power switch
-- Custom waterproof enclosure
+- Slide power switch
+- Push button
+- Waterproof enclosure
+
+For full hardware documentation:
+
+[View Hardware Documentation](hardware/README.md)
+
+---
+
+## Wiring Diagram
+
+![Smart Swimming Tracker Wiring Diagram](hardware/wiring-diagram.png)
+
+---
+
+## Firmware
+
+The firmware is developed using PlatformIO for the ESP32.
+
+The code is separated into modules for:
+
+- motion sensing
+- stroke and lap detection
+- heart-rate monitoring
+- calibration
+- battery monitoring
+- LED status control
+- storage
+- Blynk communication
+
+[View Firmware](firmware/)
+
+---
+
+## System Documentation
+
+Detailed technical documentation includes:
+
+- system architecture
+- MPU6050 motion sensing
+- sensor calibration
+- stroke detection
+- lap detection
+- speed calculations
+- heart-rate monitoring
+- power management
+- FreeRTOS operation
+- limitations and future improvements
+
+[View Technical Documentation](documentation/README.md)
+
+---
+
+## Blynk Dashboard
+
+### Dashboard View 1
+
+![Blynk Dashboard 1](images/blynk-dashboard1.jpeg)
+
+### Dashboard View 2
+
+![Blynk Dashboard 2](images/blynk-dashboard2.jpeg)
+
+---
+
+## Project Images
+
+Final device and internal hardware images will be added soon.
+
+[View Project Images](images/README.md)
+
+---
 
 ## Communication
 
-The MPU6050 and MAX30102 communicate with the ESP32 using the I2C communication protocol.
+The MPU6050 and MAX30102 communicate with the ESP32 using I2C.
 
-Sensor data is processed by the ESP32 and selected swimming metrics are transmitted to the Blynk IoT platform.
+- SDA: GPIO 21
+- SCL: GPIO 22
 
-## Data Processing
+Other important pins:
 
-The system processes motion data from the MPU6050 to identify swimming movements.
+- Wake / Reset Button: GPIO 0
+- Status LED: GPIO 2
+- Battery ADC: GPIO 34
 
-Current functionality includes:
+---
 
-- stroke recognition
-- lap detection
-- movement analysis
-- speed estimation
+## Power System
 
-The MAX30102 is used to monitor heart rate during a swimming session.
+The tracker is powered using a rechargeable Li-Po battery.
 
-## Engineering Challenges
+Power flow:
 
-Some of the main challenges explored during development include:
-
-- sensor calibration
-- avoiding false stroke detections
-- detecting laps reliably
-- sensor orientation changes
-- waterproof enclosure design
-- battery and power management
-- combining multiple sensors on the same I2C bus
-
-## Technologies Used
-
-- C / C++
-- ESP32
-- Embedded Systems
-- IoT
-- I2C
-- Sensors
-- Blynk
-- Signal Processing
-
-## Future Improvements
-
-- Improve stroke classification accuracy
-- Implement better sensor fusion
-- Improve low-power operation
-- Develop a custom PCB
-- Add Bluetooth Low Energy communication
-- Create a dedicated mobile application
-- Improve swimmer performance analytics
-
-## Project Status
-
-Currently under development and testing.
-
-## Author
-
-**Sachin Saumya**  
-Electrical & Electronic Engineering Undergraduate  
-University of Peradeniya
-
-Interested in embedded systems, sensors, IoT, mobile-device hardware and smartphone R&D.
+```text
+Li-Po Battery
+      |
+      v
+TP4056 Charging / Protection
+      |
+      v
+Slide Power Switch
+      |
+      v
+DC-DC Boost Converter
+      |
+      v
+ESP32 + Sensors
