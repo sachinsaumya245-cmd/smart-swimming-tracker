@@ -154,3 +154,55 @@ DC-DC Boost Converter
       |
       v
 ESP32 + Sensors
+
+Software Technologies
+- C / C++
+- ESP32
+- PlatformIO
+- FreeRTOS
+- Blynk IoT
+- I2C
+- Embedded Systems
+- Sensor Processing
+- Signal Processing
+
+Engineering Challenges
+
+Some of the main challenges during development included:
+- false stroke detection
+- lap detection reliability
+- MPU6050 calibration
+- sensor orientation changes
+- heart-rate sensor stability
+- waterproof enclosure design
+- low-power operation
+- battery integration
+- combining multiple sensors on the same I2C bus
+
+Future Improvements
+
+Possible future improvements include:
+- better sensor fusion
+- adaptive stroke detection
+- improved lap classification
+- BLE communication
+- dedicated mobile application
+- custom PCB design
+- smaller enclosure
+- improved waterproofing
+- lower-power hardware
+- machine-learning-based stroke classification
+- more advanced swimmer analytics
+
+Author
+Sachin Saumya
+Electrical & Electronic Engineering Undergraduate
+University of Peradeniya
+Interested in:
+- Embedded Systems
+- Sensors
+- IoT
+- Firmware Development
+- Low-Power Devices
+- Smartphone Hardware
+- Mobile Technology R&D
