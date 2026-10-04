@@ -1,5 +1,13 @@
 # Project Images
 
+## Final Device
+
+![Final Device](final-device.jpg)
+
+## Internal Hardware
+
+![Internal Hardware](internal-hardware.jpg)
+
 ## Blynk Dashboard
 
 ### Dashboard View 1
