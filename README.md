@@ -154,7 +154,7 @@ DC-DC Boost Converter
       |
       v
 ESP32 + Sensors
-
+```
 Software Technologies
 - C / C++
 - ESP32
@@ -167,7 +167,6 @@ Software Technologies
 - Signal Processing
 
 Engineering Challenges
-
 Some of the main challenges during development included:
 - false stroke detection
 - lap detection reliability
@@ -180,7 +179,6 @@ Some of the main challenges during development included:
 - combining multiple sensors on the same I2C bus
 
 Future Improvements
-
 Possible future improvements include:
 - better sensor fusion
 - adaptive stroke detection
@@ -206,3 +204,4 @@ Interested in:
 - Low-Power Devices
 - Smartphone Hardware
 - Mobile Technology R&D
+
