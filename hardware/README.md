@@ -1,5 +1,9 @@
 # Hardware
 
+## Wiring Diagram
+
+![Smart Swimming Tracker Wiring Diagram](wiring-diagram.png)
+
 This folder contains the hardware documentation for the Smart Swimming Tracker.
 
 ## Main Components
